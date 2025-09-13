@@ -58,6 +58,9 @@ instances:
         packages:
         - apt-transport-https
         - docker.io
+        - kubelet 
+        - kubeadm
+        - kubectl
 
         runcmd:
         - |
@@ -89,6 +92,7 @@ instances:
           systemctl disable ua-messaging.service ua-messaging.timer --now
         - |
           # apt cleanup
+          apt-mark hold kubelet kubeadm kubectl
           apt-get autoremove -y
 
         final_message: "The system is finally up, after $UPTIME seconds"

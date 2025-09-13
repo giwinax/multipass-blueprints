@@ -14,7 +14,7 @@ instances:
     workspace: true
     limits:
       min-cpu: 2
-      min-mem: 4G
+      min-mem: 2G
       min-disk: 20G
     cloud-init:
       vendor-data: |
